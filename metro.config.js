@@ -2,11 +2,7 @@ const { getDefaultConfig } = require("@expo/metro-config");
 
 const config = getDefaultConfig(__dirname);
 
-// Fix for older Node environments
-if (Array.prototype.toReversed) {
-  config.resolver.sourceExts = config.resolver.sourceExts.toReversed();
-} else {
-  config.resolver.sourceExts = config.resolver.sourceExts.slice().reverse();
-}
+// Compatible array reverse for all Node versions
+config.resolver.sourceExts = [...config.resolver.sourceExts].reverse();
 
 module.exports = config;
