@@ -1,0 +1,651 @@
+You are an expert React Native (Expo) developer. Build a premium offline mobile app called "DhagaX". The app is a thread shade matching tool for a shop. The UI must look luxurious, minimal, and fast. The entire app must work offline using a local JSON database.
+
+
+
+---------------------------------------------------
+
+APP NAME
+
+---------------------------------------------------
+
+DhagaX
+
+
+
+---------------------------------------------------
+
+CORE PURPOSE
+
+---------------------------------------------------
+
+The app helps users quickly find thread shade matches.
+
+
+
+User enters a shade number → the app searches a local JSON file → shows strip number and color preview.
+
+
+
+---------------------------------------------------
+
+NAVIGATION STRUCTURE
+
+---------------------------------------------------
+
+Use a bottom tab navigation with 5 tabs:
+
+
+
+Search
+
+Library
+
+Saved
+
+Settings
+
+About
+
+
+
+---------------------------------------------------
+
+SEARCH SCREEN (HOME)
+
+---------------------------------------------------
+
+Layout:
+
+
+
+Top header:
+
+RUBY
+
+MATCHING CENTRE
+
+9871574562
+
+
+
+Below header:
+
+Premium search bar
+
+
+
+Center animated star icon
+
+
+
+Text below star:
+
+Find Shade No.
+
+
+
+Result card area.
+
+
+
+---------------------------------------------------
+
+SEARCH BAR DESIGN
+
+---------------------------------------------------
+
+Style:
+
+Rounded corners
+
+Glass effect background
+
+Thin gold border
+
+Premium padding
+
+
+
+Left icon:
+
+Search icon
+
+
+
+Right icon:
+
+X clear button
+
+
+
+Placeholder text:
+
+Enter Shade No.
+
+
+
+---------------------------------------------------
+
+SEARCH BEHAVIOR
+
+---------------------------------------------------
+
+User enters shade number.
+
+
+
+Examples:
+
+P45
+
+p45
+
+45
+
+
+
+System ignores letter "P" and searches using the number.
+
+
+
+Search delay:
+
+1 second debounce before searching.
+
+
+
+---------------------------------------------------
+
+SEARCH RESULT LOGIC
+
+---------------------------------------------------
+
+Data source:
+
+data.json file
+
+
+
+Each entry contains:
+
+shade_no
+
+strip_no
+
+hex_code
+
+
+
+If shade exists:
+
+
+
+Play sound:
+
+yes.mp3
+
+
+
+Close numpad automatically
+
+
+
+Show result card.
+
+
+
+---------------------------------------------------
+
+WRONG SHADE BEHAVIOR
+
+---------------------------------------------------
+
+If shade does not exist:
+
+
+
+Play sound:
+
+no.mp3
+
+
+
+Search bar shake animation.
+
+
+
+Keyboard stays open.
+
+
+
+---------------------------------------------------
+
+RESULT CARD DESIGN
+
+---------------------------------------------------
+
+Rounded card with subtle shadow.
+
+
+
+Show:
+
+
+
+STRIP NO (large bold text)
+
+
+
+Color circle preview.
+
+
+
+Button:
+
+Tap to Preview
+
+
+
+---------------------------------------------------
+
+PREVIEW SCREEN
+
+---------------------------------------------------
+
+Open full screen color.
+
+
+
+Background:
+
+shade hex color.
+
+
+
+Show details:
+
+
+
+Shade No
+
+Strip No
+
+Hex Code
+
+
+
+---------------------------------------------------
+
+CENTER ANIMATION
+
+---------------------------------------------------
+
+Use a glowing gold star icon.
+
+
+
+Animation:
+
+Fast rotation
+
+Soft glow
+
+Smooth pulse
+
+
+
+---------------------------------------------------
+
+LIBRARY SCREEN
+
+---------------------------------------------------
+
+Name:
+
+Shade Library
+
+
+
+Show all shades in grid format.
+
+
+
+Grid columns:
+
+4 columns
+
+
+
+Each grid card shows:
+
+Color square
+
+Shade number
+
+
+
+Example:
+
+
+
+[P45] [P46] [P47] [P48]
+
+
+
+Tap card → open preview screen.
+
+
+
+---------------------------------------------------
+
+LIBRARY SEARCH
+
+---------------------------------------------------
+
+Top search bar:
+
+Search shade
+
+
+
+Important:
+
+Do NOT auto close keyboard in library search.
+
+User controls keyboard.
+
+
+
+---------------------------------------------------
+
+SAVED SCREEN
+
+---------------------------------------------------
+
+User can save unlimited favorite shades.
+
+
+
+Saved card shows:
+
+
+
+Shade No
+
+Strip No
+
+Color circle
+
+Delete icon
+
+
+
+---------------------------------------------------
+
+SAVED FEATURES
+
+---------------------------------------------------
+
+Search saved shades.
+
+
+
+Delete individual shade with trash icon.
+
+
+
+Clear All button at top.
+
+
+
+Confirmation dialog:
+
+Delete all saved shades?
+
+
+
+---------------------------------------------------
+
+SETTINGS SCREEN
+
+---------------------------------------------------
+
+Options:
+
+
+
+Themes
+
+Sound toggle
+
+Haptics toggle
+
+Animations toggle
+
+
+
+---------------------------------------------------
+
+THEMES
+
+---------------------------------------------------
+
+3 premium themes.
+
+
+
+Luxury Gold:
+
+Dark background
+
+Gold accents
+
+
+
+Fabric Texture:
+
+Soft cloth texture background
+
+
+
+Thread Pattern:
+
+Minimal thread line pattern
+
+
+
+Theme change must affect:
+
+Background
+
+Cards
+
+Search bar
+
+Accent colors
+
+
+
+---------------------------------------------------
+
+ABOUT SCREEN
+
+---------------------------------------------------
+
+Show developer information.
+
+
+
+Developer:
+
+Aryan Khan
+
+
+
+Founder:
+
+Ruby Matching Centre
+
+
+
+Story text explaining that a college student created this app to help his father's thread matching shop.
+
+
+
+Show developer photo:
+
+me.png
+
+
+
+---------------------------------------------------
+
+APP ASSETS
+
+---------------------------------------------------
+
+Use these assets:
+
+
+
+Thread Data:
+
+data.json
+
+
+
+App icon:
+
+dhaga.png
+
+
+
+Developer photo:
+
+me.png
+
+
+
+Correct sound:
+
+yes.mp3
+
+
+
+Wrong sound:
+
+no.mp3
+
+
+
+---------------------------------------------------
+
+FONTS
+
+---------------------------------------------------
+
+Use clean modern fonts.
+
+
+
+Numbers must be very readable.
+
+
+
+Important numbers:
+
+Shade number
+
+Strip number
+
+Phone number
+
+
+
+Make them bold and large.
+
+
+
+---------------------------------------------------
+
+OFFLINE STORAGE
+
+---------------------------------------------------
+
+Use local storage for saved shades.
+
+
+
+All shade data must come from data.json.
+
+
+
+---------------------------------------------------
+
+DEPENDENCIES
+
+---------------------------------------------------
+
+Use minimal dependencies to avoid build errors.
+
+
+
+Allowed libraries:
+
+expo-av
+
+expo-haptics
+
+expo-font
+
+
+
+Avoid:
+
+expo-router
+
+expo-audio
+
+complex plugins
+
+
+
+---------------------------------------------------
+
+VISUAL STYLE
+
+---------------------------------------------------
+
+Dark luxury UI
+
+Gold accent highlights
+
+Smooth animations
+
+Minimal layout
+
+Fast performance
+
+
+
+---------------------------------------------------
+
+FINAL GOAL
+
+---------------------------------------------------
+
+The app must feel like a professional thread shade matching tool used in a real shop.
+
+
+
+It must be:
+
+Fast
+
+Offline
+
+Premium looking
+
+Easy to use
+
+Stable to build.
